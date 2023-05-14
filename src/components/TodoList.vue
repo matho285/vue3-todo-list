@@ -38,13 +38,13 @@ defineEmits<{
 }>();
 
 const todoStore = useTodosStore();
-const { todos } = storeToRefs(todoStore);
+const { fetchTodos, getTodosByTodolistId } = todoStore;
 
 const todosCount = computed(() => {
-  return todos.value.get(props.todolist.id)?.length;
+  return getTodosByTodolistId(props.todolist.id)?.length;
 });
 
 onMounted(async () => {
-  todoStore.fetchTodos(props.todolist.id);
+  fetchTodos(props.todolist.id);
 });
 </script>

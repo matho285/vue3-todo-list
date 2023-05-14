@@ -43,7 +43,7 @@ import TodoListForm from '@/components/TodoListForm.vue';
 const showTodolistForm = ref(false);
 
 const todolistStore = useTodolistStore();
-const { todolists, loading } = storeToRefs(todolistStore);
+const { todolists } = storeToRefs(todolistStore);
 const { fetchTodolists, deleteTodolist } = todolistStore;
 
 const selectedTodolist = ref<Todolist | undefined>();

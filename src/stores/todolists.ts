@@ -52,7 +52,7 @@ export const useTodolistStore = defineStore('todolists', () => {
   }
 
   return {
-    todolists: readonly(todolists),
+    todolists: todolists,
     loading: readonly(loading),
     fetchTodolists,
     addTodolist,

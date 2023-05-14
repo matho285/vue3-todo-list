@@ -62,7 +62,7 @@ export const useTodosStore = defineStore('todos', () => {
         error.value = err;
       });
   }
-  function getTodosByCodelistId(todolistId: string, filter: FilterTodo | undefined) {
+  function getTodosByTodolistId(todolistId: string, filter: FilterTodo | undefined = undefined) {
     let todoItems = todos.value.get(todolistId) || [];
 
     if (filter?.text) {
@@ -79,5 +79,13 @@ export const useTodosStore = defineStore('todos', () => {
     return todoItems;
   }
 
-  return { todos, loading, fetchTodos, addTodo, deleteTodo, markAsCompleted, getTodosByCodelistId };
+  return {
+    todos,
+    loading,
+    fetchTodos,
+    addTodo,
+    deleteTodo,
+    markAsCompleted,
+    getTodosByTodolistId,
+  };
 });

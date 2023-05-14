@@ -42,11 +42,11 @@ const props = defineProps<{
 const showTodoForm = ref(false);
 
 const todosStore = useTodosStore();
-const { fetchTodos, getTodosByCodelistId } = todosStore;
+const { fetchTodos, getTodosByTodolistId } = todosStore;
 
 const filter = ref<FilterTodo | undefined>();
 const currentTodos = computed(() => {
-  return getTodosByCodelistId(props.todolist.id, filter.value);
+  return getTodosByTodolistId(props.todolist.id, filter.value);
 });
 
 onMounted(() => {
